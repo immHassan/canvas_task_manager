@@ -65,10 +65,10 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="<?php echo base_url();?>assets/front/assets/js/core/popper.min.js"></script>
-  <script src="<?php echo base_url();?>assets/front/assets/js/core/bootstrap.min.js"></script>
-  <script src="<?php echo base_url();?>assets/front/assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="<?php echo base_url();?>assets/front/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/front/assets/js/core/popper.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/front/assets/js/core/bootstrap.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/front/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/front/assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -81,7 +81,24 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="<?php echo base_url();?>assets/front/assets/js/soft-ui-dashboard.min.js?v=1.0.6"></script>
-</body>
+  <script src="<?php echo base_url(); ?>assets/front/assets/js/soft-ui-dashboard.min.js?v=1.0.6"></script>
 
-</html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+  <?php if ($this->session->flashdata('success')) : ?>
+
+    <script>
+      swal("Good job!", <?php echo $this->session->flashdata('success') ?>, "success");
+    </script>
+  <?php endif; ?>
+  <?php if ($this->session->flashdata('error')) : ?>
+    <script>
+      swal("Error!", <?php echo $this->session->flashdata('error') ?>, "error");
+    </script>
+  <?php endif; ?>
+
+
+  </body>
+
+
+  </html>
