@@ -153,3 +153,4 @@ class Project extends Front_Controller
         $this->session->set_flashdata('success', 'Deleted Successfully.');
         redirect($this->uri->segment(1));
     }
+}
