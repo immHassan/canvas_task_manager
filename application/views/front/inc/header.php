@@ -32,6 +32,7 @@
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link href="<?php echo base_url(); ?>assets/front/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
+
   <link id="pagestyle" href="<?php echo base_url(); ?>assets/front/assets/css/soft-ui-dashboard.css?v=1.0.6" rel="stylesheet" />
 
 
@@ -47,18 +48,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" crossorigin="anonymous"></script>
   <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" crossorigin="anonymous"></script>
 
 
 
+  <link id="pagestyle" href="<?php echo base_url(); ?>assets/front/assets/css/soft-ui-dashboard.css?v=1.0.6" rel="stylesheet" />
 
 
 
-
-
-
-
-
+  <!-- CSS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+  <!-- Default theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+  <!-- Semantic UI theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+  <!-- Bootstrap theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
 
 </head>
 

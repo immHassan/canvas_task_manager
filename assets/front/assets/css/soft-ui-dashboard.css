@@ -26606,3 +26606,54 @@ pre[class*="language-"] {
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */
+
+
+.chat {
+    padding: 10px;
+}
+
+.chat ul {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.chat ul .bubble {
+    padding: 10px;
+    margin: 10px;
+    background: #e7e7e7;
+    width: 80%;
+}
+
+.chat ul .bubble p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+.chat ul .bubble small {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.chat ul .bubble.bubble-me {
+    margin-left: 20%;
+    background: #e7fff0;
+}
+
+
+.chat ul .bubble.bubble-log {
+    width: 100%;
+    text-align: center;
+    padding: 22px 0px;
+    line-height: .8;
+    background: white;
+    border-bottom: 1px dashed #ccc;
+    border-top: 1px dashed #ccc;
+}
+
+.chat ul .bubble.bubble-log p {
+    font-size: 12px;
+}

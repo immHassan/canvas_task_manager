@@ -82,6 +82,9 @@ if($link[ENV_COUNT] == 'admin'){
   $route['logout'] = 'login/logout'; 
   $route['forgot-password'] = 'login/forgot_password'; 
   $route['reset-password/(:any)'] = 'login/reset_password/$1';  
+  $route['task/add'] = 'task/add';
+  $route['task/task_stage_update'] = 'task/task_stage_update';
+  $route['task/(:any)'] = 'task/index/$1';
 
   $route['404_override'] = 'error_404';
   $route['translate_uri_dashes'] = FALSE;
