@@ -300,7 +300,6 @@
                     </li>
                   </ul>            
               </div>
-
               <div class="form-group">
                 <label for="task_description" class="col-form-label">Add Comment</label>
                 <textarea class="form-control" name="comment_text" id="comment_text" rows="3"></textarea>

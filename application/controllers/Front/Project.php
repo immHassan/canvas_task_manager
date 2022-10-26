@@ -5,13 +5,14 @@ class Project extends Front_Controller
 
     function __construct()
     {
-        parent::__construct();
+        parent::__construct();  
+        if($this->uri->segment(1) ==''){
+            redirect('project');
+        }    
     }
 
     public function index()
     {
-
-
         $data = array();
         $data['table'] = 'brand';
         $data['order_by'] = 'DESC';
@@ -31,8 +32,6 @@ class Project extends Front_Controller
 
     public function add($form_choice = "", $id = "")
     {
-
-
         if ($_POST) {
             $content = array(
                 'brand_id' => $this->input->post('brand_id', TRUE),
@@ -43,8 +42,7 @@ class Project extends Front_Controller
             );
 
             if ($_FILES) {
-
-                $image_feild = 'project_logo';
+            	$image_feild = 'project_logo';
                 $image_folder = 'project';
                 if ($_FILES[$image_feild]['size'] > 0) {
                     $_FILES[$image_feild]['name'] = $_FILES[$image_feild]['size'] . '-' . $_FILES[$image_feild]['name'];

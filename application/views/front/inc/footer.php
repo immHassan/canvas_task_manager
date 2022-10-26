@@ -85,6 +85,7 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <!-- JavaScript -->
   <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.min.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function() {
@@ -126,27 +127,39 @@
               });
 
               $('#taskViewModal .task_stage_id').html(html);
-
+              $('#taskViewModal .chat ul').html('');
               if (records.task_comments.length > 0) {
                 var chat_html = '';
 
                 $(records.task_comments).each(function(k, v) {
                   var bubble_class = '';
+                  var datetime = moment(v.comment_created_at).format('dddd D-M-Y, LTS'); 
+                  
                   if (v.comment_created_by == '<?php echo $this->session->userdata('user_id'); ?>') {
                     bubble_class = 'bubble-me';
                   }
-
+                  
                   if (v.comment_type == 'log') {
                     bubble_class = 'bubble-log';
+                    chat_html += '<li class="bubble ' + bubble_class + '"> <p> Task status was changed to "'+v.task_stage_name+'" by '+v.user_first_name+' '+v.user_last_name+' </p> <small>'+datetime+'</small> </li>';
+                  }
+                  else{
+                    chat_html += '<li class="bubble ' + bubble_class + '"> <p>' + v.comment_text + ' </p> <small>'+datetime+' - ' + v.user_first_name + ' ' + v.user_last_name + '</small> </li>';  
                   }
 
-                  chat_html += '<li class="bubble ' + bubble_class + '"> <p>' + v.comment_text + ' </p> <small>Tue 25-10-22, 05:35:28pm - ' + v.user_first_name + ' ' + v.user_last_name + '</small> </li>';
                 });
 
                 $('#taskViewModal .chat ul').html(chat_html);
+                var formatted = moment('2022-10-24 12:34:57').format('dddd D-M-Y, LTS');
+                console.log(formatted);
               }
 
               $('#taskViewModal').modal('show');
+
+              console.log($("#taskViewModal").find('.chat ul').outerHeight(true));
+              $("#taskViewModal .chat ul").animate({
+                scrollTop: $("#taskViewModal .chat ul").outerHeight(true) * 100,
+              }, 200);
 
               console.log(records);
             }

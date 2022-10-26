@@ -14,7 +14,7 @@ class Task extends Front_Controller {
         $content['project'] = $this->general->get($data);
 
         if(empty($content['project']) || empty($project_id)){
-            redirect('dashboard');
+            redirect('project');
         }
 
         $data = array();
@@ -126,15 +126,26 @@ class Task extends Front_Controller {
 
 
         $data = array();
-        $data['select'] = 'comment.*, user.user_first_name, user.user_last_name,user.user_id';
+        $data['select'] = 'task_stage.*,comment.*, user.user_first_name, user.user_last_name,user.user_id';
         $data['table'] = 'comment';
         $data['where'] = array('task_id' => $records->task_id);
         $data['output_type'] = 'result';
         $data['order_by_col'] = 'comment_id';
         $data['order_by'] = 'ASC';
-        $data['join'] = 'comment.comment_created_by = user.user_id';
-        $data['join_table'] = 'user';
-        $data['join_type'] = 'LEFT';
+
+        $data['join_array'] = array(
+            array(
+                'join' => 'comment.task_stage_id = task_stage.task_stage_id',
+                'join_table' => 'task_stage',
+                'join_type' => 'LEFT',
+            ),
+            array(
+                'join' => 'comment.comment_created_by = user.user_id',
+                'join_table' => 'user',
+                'join_type' => 'LEFT',
+            ),
+        );
+
         $task_comments = $this->general->get($data); 
 
         $records->task_comments = $task_comments;

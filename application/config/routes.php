@@ -78,7 +78,7 @@ if($link[ENV_COUNT] == 'admin'){
   $route['translate_uri_dashes'] = FALSE;
 }else{ 
   $this->set_directory( "Front" );  
-  $route['default_controller'] = 'dashboard';
+  $route['default_controller'] = 'project';
   $route['logout'] = 'login/logout'; 
   $route['forgot-password'] = 'login/forgot_password'; 
   $route['reset-password/(:any)'] = 'login/reset_password/$1';  

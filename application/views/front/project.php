@@ -272,12 +272,11 @@
                   foreach ($project as $record) { ?>
 
                     <tr>
-
-
+                      
                       <td>
                         <div class="d-flex px-2">
                           <div class="my-auto">
-                            <a href="tables_tasks.html">
+                            <a href="<?php echo base_url('task/'.$record->project_id);?>">
                               <h6 class="mb-0 text-sm"><span class="badge bg-gradient-dark">#<?= $record->project_id; ?></span></h6>
                             </a>
                           </div>
@@ -288,7 +287,7 @@
                       <td>
                         <div class="d-flex px-2">
                           <div class="my-auto">
-                            <a href="tables_tasks.html">
+                            <a href="<?php echo base_url('task/'.$record->project_id);?>">
                               <h6 class="mb-0 text-sm"><?= $record->project_title; ?></h6>
                             </a>
                           </div>
@@ -299,7 +298,7 @@
                       <td>
                         <div class="d-flex px-2">
                           <div class="my-auto">
-                            <a href="tables_tasks.html">
+                            <a href="<?php echo base_url('task/'.$record->project_id);?>">
                               <h6 class="mb-0 text-sm"><?= $record->client_name; ?></h6>
                             </a>
                           </div>
@@ -310,31 +309,26 @@
                       <td>
                         <div class="d-flex px-2">
                           <div class="my-auto">
-                            <a href="tables_tasks.html">
+                            <a href="<?php echo base_url('task/'.$record->project_id);?>">
                               <h6 class="mb-0 text-sm"><?= $record->client_email; ?></h6>
                             </a>
                           </div>
                         </div>
                       </td>
 
-
-
                       <td>
                         <div class="d-flex px-2">
                           <div class="my-auto">
-                            <a href="tables_tasks.html">
+                            <a href="<?php echo base_url('task/'.$record->project_id);?>">
                               <h6 class="mb-0 text-sm"><?= $record->client_phone; ?></h6>
                             </a>
                           </div>
                         </div>
                       </td>
 
-
-
                       <td>
                         <p class="text-sm font-weight-bold mb-0 momentDate"><?= $record->brand_id; ?></p>
                       </td>
-
 
                       <td>
                         <p class="text-sm font-weight-bold mb-0 momentDate"><?= $record->project_created_at; ?></p>
